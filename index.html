@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Năm Mới 2026 - Bính Ngọ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="flower-animation">
+                <div class="flower petal petal1"></div>
+                <div class="flower petal petal2"></div>
+                <div class="flower petal petal3"></div>
+                <div class="flower petal petal4"></div>
+                <div class="flower petal petal5"></div>
+                <div class="flower-center"></div>
+            </div>
+            <h2 class="loading-text">Chào Xuân 2026 <span class="dots"></span></h2>
+            <p class="loading-subtext">Đang chuẩn bị lời chúc...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Background Elements -->
+        <div class="background-elements">
+            <canvas id="fireworks-canvas"></canvas>
+            <div id="falling-flowers"></div>
+        </div>
+
+        <!-- Music Control -->
+        <button id="music-toggle" class="music-toggle" aria-label="Bật/tắt nhạc nền">
+            <i class="fas fa-music"></i>
+            <span class="music-text">Bật nhạc</span>
+        </button>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="main-title" id="main-title">
+                    <span class="title-text">Chúc Mừng Năm Mới</span>
+                    <span class="year-text">2026</span>
+                    <span class="title-decoration">🎊</span>
+                </h1>
+                <p class="subtitle">Bính Ngọ - An Khang – Thịnh Vượng – Vạn Sự Như Ý</p>
+                <div class="hero-decoration">
+                    <div class="lantern lantern-left">🏮</div>
+                    <div class="lantern lantern-right">🏮</div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section">
+            <h2 class="section-title">Countdown đến Tết 2026</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Ngày</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Giờ</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Phút</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Giây</div>
+                </div>
+            </div>
+            <p class="countdown-message" id="countdown-message">Chúc mừng năm mới Bính Ngọ 2026!</p>
+        </section>
+
+        <!-- Greetings Section -->
+        <section class="greetings-section">
+            <h2 class="section-title">Lời Chúc Tết Ý Nghĩa</h2>
+            <p class="section-subtitle">Chạm vào từng lời chúc để nhận nhiều may mắn</p>
+            
+            <div class="greetings-container">
+                <div class="greeting-card" data-category="wealth">
+                    <div class="card-front">
+                        <div class="card-icon">💰</div>
+                        <h3 class="card-title">Tài Lộc</h3>
+                        <p class="card-hint">Chạm để xem lời chúc</p>
+                    </div>
+                    <div class="card-back">
+                        <p class="card-message" id="wealth-message">Tiền vào như nước, tiền ra nhỏ giọt, tài khoản tăng vùn vụt!</p>
+                    </div>
+                </div>
+                
+                <div class="greeting-card" data-category="family">
+                    <div class="card-front">
+                        <div class="card-icon">❤️</div>
+                        <h3 class="card-title">Gia Đình</h3>
+                        <p class="card-hint">Chạm để xem lời chúc</p>
+                    </div>
+                    <div class="card-back">
+                        <p class="card-message" id="family-message">Gia đình hạnh phúc, sum vầy, bình an và ấm no!</p>
+                    </div>
+                </div>
+                
+                <div class="greeting-card" data-category="career">
+                    <div class="card-front">
+                        <div class="card-icon">📚</div>
+                        <h3 class="card-title">Học Tập & Công Việc</h3>
+                        <p class="card-hint">Chạm để xem lời chúc</p>
+                    </div>
+                    <div class="card-back">
+                        <p class="card-message" id="career-message">Thăng tiến như diều gặp gió, thành công rực rỡ!</p>
+                    </div>
+                </div>
+                
+                <div class="greeting-card" data-category="health">
+                    <div class="card-front">
+                        <div class="card-icon">🌸</div>
+                        <h3 class="card-title">Sức Khỏe</h3>
+                        <p class="card-hint">Chạm để xem lời chúc</p>
+                    </div>
+                    <div class="card-back">
+                        <p class="card-message" id="health-message">Dồi dào sức khỏe, tràn đầy năng lượng, vui tươi mỗi ngày!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="randomize-btn" class="randomize-btn">
+                <i class="fas fa-random"></i> Đổi lời chúc
+            </button>
+        </section>
+
+        <!-- Custom Greeting Section -->
+        <section class="custom-greeting-section">
+            <h2 class="section-title">Tạo Lời Chúc Cá Nhân</h2>
+            <div class="custom-form">
+                <input type="text" id="recipient-name" placeholder="Nhập tên người nhận..." maxlength="30">
+                <button id="generate-greeting" class="generate-btn">
+                    <i class="fas fa-magic"></i> Tạo lời chúc
+                </button>
+            </div>
+            <div class="personal-greeting" id="personal-greeting">
+                <!-- Personal greeting will appear here -->
+            </div>
+            <div class="qr-container" id="qr-container">
+                <div class="qr-code" id="qr-code">
+                    <!-- QR code will be generated here -->
+                </div>
+                <p class="qr-label">Quét để chia sẻ lời chúc</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-message">
+                    <span class="heart">💖</span> 
+                    Chúc bạn và gia đình một năm 2026 tràn đầy hạnh phúc, thành công và sức khỏe! 
+                    <span class="heart">💖</span>
+                </p>
+                <div class="footer-decoration">
+                    <div class="footer-icon">🐎</div>
+                    <div class="footer-text">Bính Ngọ 2026</div>
+                    <div class="footer-icon">🎉</div>
+                </div>
+                <p class="footer-note">Website được tạo với HTML5, CSS3 & JavaScript thuần</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Audio for background music -->
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-new-year-sound-2221.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-new-year-sound-2221.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
